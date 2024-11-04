@@ -1,5 +1,0 @@
-mocha --require ./test/global-setup.mjs --reporter mocha-junit-reporter --reporter-options mochaFile=test-results.xml
-
-
- "test": "mocha --require ./test/global-setup.mjs --reporter mocha-junit-reporter --reporter-options mochaFile=test-results.xml"
-  },--reporter mochawesome --reporter-options reportDir=reports"

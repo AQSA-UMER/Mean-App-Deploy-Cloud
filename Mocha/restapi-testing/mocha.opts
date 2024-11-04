@@ -1,3 +1,0 @@
---require ./test/global-setup.mjs
---require mocha-junit-reporter
---reporter-options mochaFile=test-results.xml
