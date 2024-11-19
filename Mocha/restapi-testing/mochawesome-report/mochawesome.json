@@ -2,14 +2,14 @@
   "stats": {
     "suites": 3,
     "tests": 2,
-    "passes": 2,
+    "passes": 1,
     "pending": 0,
-    "failures": 0,
-    "start": "2024-10-15T09:18:32.673Z",
-    "end": "2024-10-15T09:18:32.764Z",
-    "duration": 91,
+    "failures": 1,
+    "start": "2024-11-19T08:37:51.157Z",
+    "end": "2024-11-19T08:37:51.260Z",
+    "duration": 103,
     "testsRegistered": 2,
-    "passPercent": 100,
+    "passPercent": 50,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "bd095292-01fb-4ced-a9f1-1130a416e9ab",
+      "uuid": "4286af8a-f590-4248-a4b1-6aa7699678ae",
       "title": "",
-      "fullFile": "C:\\Users\\Lenovo\\Desktop\\Integrate and Deploy your MEAN app on Cloud\\Mocha\\restapi-testing\\test\\api.test.mjs",
+      "fullFile": "D:\\Mean-app-Cloud\\Phase-4-Cloud\\Mocha\\restapi-testing\\test\\api.test.mjs",
       "file": "\\test\\api.test.mjs",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "607ded0d-96af-4102-a689-9590fa2c8bb8",
+          "uuid": "3935733f-408b-43cf-9c00-c157f9bf5e58",
           "title": "API Tests",
-          "fullFile": "C:\\Users\\Lenovo\\Desktop\\Integrate and Deploy your MEAN app on Cloud\\Mocha\\restapi-testing\\test\\api.test.mjs",
+          "fullFile": "D:\\Mean-app-Cloud\\Phase-4-Cloud\\Mocha\\restapi-testing\\test\\api.test.mjs",
           "file": "\\test\\api.test.mjs",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "1c660e3e-0cea-4e86-bbe5-dc3a642fbbb9",
+              "uuid": "92a91476-48bf-49a4-95dd-ea1871ede362",
               "title": "GET /api/items",
-              "fullFile": "C:\\Users\\Lenovo\\Desktop\\Integrate and Deploy your MEAN app on Cloud\\Mocha\\restapi-testing\\test\\api.test.mjs",
+              "fullFile": "D:\\Mean-app-Cloud\\Phase-4-Cloud\\Mocha\\restapi-testing\\test\\api.test.mjs",
               "file": "\\test\\api.test.mjs",
               "beforeHooks": [],
               "afterHooks": [],
@@ -47,37 +47,41 @@
                   "title": "should return a list of items",
                   "fullTitle": "API Tests GET /api/items should return a list of items",
                   "timedOut": false,
-                  "duration": 44,
-                  "state": "passed",
-                  "speed": "medium",
-                  "pass": true,
-                  "fail": false,
+                  "duration": 40,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "request(app)\n.get('/api/items')\n.expect(200)\n.end((err,res)=>{\n    if(err) done(err);\n    expect(res.body).to.be.an('array').that.is.not.empty;\n    const item = res.body.find(item=> item.name === \"item 1\");\n    assert.strictEqual(item.name,'item 1');\n    done();\n    \n})",
-                  "err": {},
-                  "uuid": "cac46c21-cfdc-4567-80ed-78a6751ba479",
-                  "parentUUID": "1c660e3e-0cea-4e86-bbe5-dc3a642fbbb9",
+                  "err": {
+                    "message": "AssertionError: expected [] not to be empty",
+                    "estack": "AssertionError: expected [] not to be empty\n    at Test.<anonymous> (file:///D:/Mean-app-Cloud/Phase-4-Cloud/Mocha/restapi-testing/test/api.test.mjs:13:63)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:172:8)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:120:14)\n    at Object.onceWrapper (node:events:633:28)\n    at Server.emit (node:events:519:28)\n    at emitCloseNT (node:net:2340:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)",
+                    "diff": null
+                  },
+                  "uuid": "44bb3650-95b7-4ee3-8635-64a55d24fec3",
+                  "parentUUID": "92a91476-48bf-49a4-95dd-ea1871ede362",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [
-                "cac46c21-cfdc-4567-80ed-78a6751ba479"
+              "passes": [],
+              "failures": [
+                "44bb3650-95b7-4ee3-8635-64a55d24fec3"
               ],
-              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 44,
+              "duration": 40,
               "root": false,
               "rootEmpty": false,
-              "_timeout": 2000
+              "_timeout": 10000
             },
             {
-              "uuid": "8801c038-8a19-4712-95ee-595eb3c0806d",
+              "uuid": "8e7cb891-44c2-44ad-bf15-cdf08260a6b8",
               "title": "POST /api/items",
-              "fullFile": "C:\\Users\\Lenovo\\Desktop\\Integrate and Deploy your MEAN app on Cloud\\Mocha\\restapi-testing\\test\\api.test.mjs",
+              "fullFile": "D:\\Mean-app-Cloud\\Phase-4-Cloud\\Mocha\\restapi-testing\\test\\api.test.mjs",
               "file": "\\test\\api.test.mjs",
               "beforeHooks": [],
               "afterHooks": [],
@@ -86,32 +90,32 @@
                   "title": "should create a new Items",
                   "fullTitle": "API Tests POST /api/items should create a new Items",
                   "timedOut": false,
-                  "duration": 34,
+                  "duration": 47,
                   "state": "passed",
-                  "speed": "fast",
+                  "speed": "medium",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "const newItem = {name:'Item2'};\nrequest(app)\n.post('/api/items')\n.send(newItem)\n.end((err,res)=>{\n    if(err) return done(err);\n    expect(res.body).to.have.property('id');\n    expect(res.body).to.have.property('name');\n    done();\n})",
                   "err": {},
-                  "uuid": "9fe23806-311a-4520-a4b7-1a2c3a3aa483",
-                  "parentUUID": "8801c038-8a19-4712-95ee-595eb3c0806d",
+                  "uuid": "501f1937-77df-45bc-bc9c-37e8181e913d",
+                  "parentUUID": "8e7cb891-44c2-44ad-bf15-cdf08260a6b8",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9fe23806-311a-4520-a4b7-1a2c3a3aa483"
+                "501f1937-77df-45bc-bc9c-37e8181e913d"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 34,
+              "duration": 47,
               "root": false,
               "rootEmpty": false,
-              "_timeout": 2000
+              "_timeout": 10000
             }
           ],
           "passes": [],
@@ -121,7 +125,7 @@
           "duration": 0,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 2000
+          "_timeout": 10000
         }
       ],
       "passes": [],
@@ -131,12 +135,12 @@
       "duration": 0,
       "root": true,
       "rootEmpty": true,
-      "_timeout": 2000
+      "_timeout": 10000
     }
   ],
   "meta": {
     "mocha": {
-      "version": "10.7.3"
+      "version": "10.8.2"
     },
     "mochawesome": {
       "options": {
