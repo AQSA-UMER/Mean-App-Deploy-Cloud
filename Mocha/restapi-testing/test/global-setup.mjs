@@ -1,12 +1,11 @@
 // const mongoose = require('mongoose');
 import mongoose from 'mongoose';
 
+
 export async function mochaGlobalSetup(){
     console.log("Global Setup: connecting to database - global setup");
-    // use environment variable for mongoDB connection URI
-    const mongoUri = process.env.MONGO_URL || 'mongodb://localhost:27017/testDB'
 
-    await mongoose.connect(mongoUri);
+    await mongoose.connect('mongodb://localhost:27017/testDB');
 
     //global state or shared state
     global.globalData = {count:0}
