@@ -9,11 +9,15 @@ describe('API Tests', function(){
             .get('/api/items')
             .expect(200)
             .end((err,res)=>{
-                if(err) done(err);
+                if(err) return done(err);
                 expect(res.body).to.be.an('array').that.is.not.empty;
 
-                const item = res.body.find(item=> item.name === "item 1");
-                assert.strictEqual(item.name,'item 1');
+                const item = res.body.find((item)=> item.name === "item 1");
+                expect(item).to.not.be.undefined; //Ensure the item exists
+                if(item){
+                    assert.strictEqual(item.name,'item 1'); //this is line 16
+                    
+                }
 
                 done();
                 
