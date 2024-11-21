@@ -12,15 +12,17 @@ describe('API Tests', function(){
                 if(err) return done(err);
                 expect(res.body).to.be.an('array').that.is.not.empty;
 
-                const item = res.body.find((item)=> item.name === "item 1");
-                expect(item).to.not.be.undefined; //Ensure the item exists
-                if(item){
-                    assert.strictEqual(item.name,'item 1'); //this is line 16
-                    
-                }
+                //expect(res.body).to.have.property('name','Item1');
+                //assert.strictEqual(res.body.name, 'Item1');
 
+                const item = res.body.find(item=> item.name === "Item1");
+                assert.isDefined(item,'item exist');
+                assert.strictEqual(item.name,'Item1');
+
+                //assert.isArray(res.body,'is response an array')
                 done();
-                
+                //assert.isNotNull(val);
+                //expect(val).to.not.be.null;
             })
         })
     });
