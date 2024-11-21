@@ -2,6 +2,7 @@ import { expect, assert } from 'chai';
 import request from 'supertest';
 import app from '../app.mjs';
 
+
 describe('API Tests', function(){
     describe('GET /api/items', ()=>{
         it('should return a list of items', (done)=>{
@@ -9,9 +10,8 @@ describe('API Tests', function(){
             .get('/api/items')
             .expect(200)
             .end((err,res)=>{
-                if(err) return done(err);
+                if(err) done(err);
                 expect(res.body).to.be.an('array').that.is.not.empty;
-
                 //expect(res.body).to.have.property('name','Item1');
                 //assert.strictEqual(res.body.name, 'Item1');
 
@@ -42,5 +42,4 @@ describe('API Tests', function(){
         })
 
     })
-})  
-
+})
