@@ -8,19 +8,7 @@ export async function mochaGlobalSetup(){
     // use environment variable for mongoDB connection URI
     const mongoUri = process.env.MONGO_URL || 'mongodb://localhost:27017/testDB'
 
-    // Connect to MongoDB [here add line 11-23]
-    await mongoose.connect(mongoUri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-
-    // Clear the database and seed initial data
-    console.log("Seeding database with initial data...");
-    await Item.deleteMany(); // Clear existing data
-    await Item.insertMany([
-        { name: "Item 1" },
-        { name: "Item 2" },
-    ]);
+    await mongoose.connect(mongoUri);
 
     //global state or shared state
     global.globalData = {count:0};
