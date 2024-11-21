@@ -4,10 +4,10 @@ const app = express();
 const port = 3000;
 //MongoDB model
 const itemSchema = new mongoose.Schema({
-    name:String
+    name:String,
 });
 
-const Item = mongoose.model('Item', itemSchema);
+export const Item = mongoose.model('Item', itemSchema);
 
 app.use(express.json());
 
@@ -30,7 +30,7 @@ app.post('/api/items', async(req,res)=>{
         res.status(201).json({id:item._id, name:item.name});
     }
     catch(err){
-        res.status(500).json({message: 'Error creating item'})
+        res.status(500).json({message: 'Error creating item'});
     }
 })
 
