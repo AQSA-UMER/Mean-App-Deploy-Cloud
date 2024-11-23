@@ -17,8 +17,7 @@ pipeline{
             steps{
                 checkout([$class: 'GitSCM',
                 branches: [[name: '*/main']],
-                userRemoteConfigs: [[url: 'https://github.com/AQSA-UMER/Mean-App-Deploy-Cloud.git']]
-                
+                userRemoteConfigs: [[url: 'https://github.com/AQSA-UMER/Mean-App-Deploy-Cloud.git']] 
                 ])
             }
         }
@@ -26,7 +25,7 @@ pipeline{
         stage('Install Dependencies'){
             steps{
                 dir('Mocha/restapi-testing'){
-                    bat 'npm Install'
+                    bat 'npm install'
                 }
             }
         }

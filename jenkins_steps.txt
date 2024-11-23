@@ -89,7 +89,7 @@ Step-by-Step Guide
    - Pipeline Plugin
    - GitHub Plugin (optional for better GitHub integration)
 
-   Step 2: Configure Jenkins NodeJS Environment
+Step 2: Configure Jenkins NodeJS Environment
 1.   Go to Jenkins Dashboard > Manage Jenkins > Global Tool Configuration  .
 2.   Scroll down to NodeJS  .
 3.   Add NodeJS   with the desired name and version.
